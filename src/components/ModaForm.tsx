@@ -50,7 +50,7 @@ const ModalForm: React.FC = () => {
 
   const modalTitle = (
     <div className="modal-title">
-      <h3>تسویه کیف پول</h3>
+      <h4>تسویه کیف پول</h4>
       <hr />
     </div>
   );
@@ -89,9 +89,9 @@ const ModalForm: React.FC = () => {
           initialValues={{ currentBalance: "15,000,000" }}
         >
           <div style={{ marginBottom: "16px" }}>
-            <h4>موجودی فعلی:</h4>
+            <p style={{ color: "GrayText" }}>موجودی فعلی:</p>
             <p style={{ color: "blue", marginTop: 12, fontSize: 24 }}>
-              15,000<span style={{ fontSize: 12 }}>ریال</span>
+              15,000<span style={{ fontSize: 10 }}> ریال</span>
             </p>
           </div>
           <Form.Item

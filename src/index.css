@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap");
+@import url("https://v1.fontapi.ir/css/VazirFD");
 
 * {
   box-sizing: border-box;
@@ -7,7 +7,7 @@
 }
 
 html {
-  font-family: "Vazirmatn", sans-serif;
+  font-family: "VazirFD", sans-serif;
   font-size: 62.5%;
 }
 
@@ -28,3 +28,7 @@ html {
   background: #ccc;
   margin: 0;
 }
+
+/* .ant-table-thead {
+  background-color: #777;
+} */

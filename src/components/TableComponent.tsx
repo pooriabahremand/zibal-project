@@ -66,7 +66,7 @@ const TableComponent: React.FC = () => {
       key: "trackId",
       render: (trackId: number) => (
         <div style={{ display: "flex", alignItems: "center" }}>
-          {trackId}
+          <p style={{ width: 80 }}>{trackId}</p>
           <CopyOutlined
             onClick={() => handleCopy(trackId)}
             style={{ cursor: "pointer", marginRight: 8 }}
@@ -115,8 +115,13 @@ const TableComponent: React.FC = () => {
 
   return (
     <div className="table-container">
-      <Table columns={columns} dataSource={filteredData} rowKey="trackId" />
-      <div>
+      <Table
+        columns={columns}
+        dataSource={filteredData}
+        rowKey="trackId"
+        pagination={false}
+      />
+      <div style={{ marginTop: 22 }}>
         <ModalComponent />
       </div>
     </div>
