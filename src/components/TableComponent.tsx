@@ -3,7 +3,7 @@ import { Table, Input, message } from "antd";
 import { SearchOutlined, CopyOutlined } from "@ant-design/icons";
 import data from "../mockData";
 import { dataInterface } from "../interface/interface";
-import ModalComponent from "./ModaForm";
+import ModalComponent from "./ModalForm";
 
 const TableComponent: React.FC = () => {
   const [searchText, setSearchText] = useState<string>("");
@@ -30,19 +30,9 @@ const TableComponent: React.FC = () => {
   const columns = [
     {
       title: (
-        <div style={{ display: "flex" }}>
+        <div className="flex-basis">
           <span>شماره تراکنش</span>
-          <SearchOutlined
-            onClick={toggleSearch}
-            style={{
-              cursor: "pointer",
-              marginRight: 8,
-              padding: 6,
-              borderRadius: 10,
-              color: "white",
-              backgroundColor: "blue",
-            }}
-          />
+          <SearchOutlined onClick={toggleSearch} className="search-icon" />
           <div
             style={{
               width: showSearch ? "200px" : "0",
@@ -56,7 +46,6 @@ const TableComponent: React.FC = () => {
                 placeholder="جستجوی شماره تراکنش"
                 value={searchText}
                 onChange={handleSearch}
-                style={{ marginLeft: 8, width: "100%" }}
               />
             )}
           </div>
@@ -65,11 +54,11 @@ const TableComponent: React.FC = () => {
       dataIndex: "trackId",
       key: "trackId",
       render: (trackId: number) => (
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <p style={{ width: 80 }}>{trackId}</p>
+        <div className="flex-basis">
+          <p className="track-id">{trackId}</p>
           <CopyOutlined
             onClick={() => handleCopy(trackId)}
-            style={{ cursor: "pointer", marginRight: 8 }}
+            className="copy-icon"
           />
         </div>
       ),
@@ -94,18 +83,9 @@ const TableComponent: React.FC = () => {
     },
     {
       title: (
-        <div style={{ display: "flex" }}>
+        <div className="flex-basis">
           <span>شماره کارت</span>
-          <SearchOutlined
-            style={{
-              cursor: "pointer",
-              marginRight: 8,
-              padding: 6,
-              borderRadius: 10,
-              color: "white",
-              backgroundColor: "blue",
-            }}
-          />
+          <SearchOutlined className="search-icon" />
         </div>
       ),
       dataIndex: "cardNumber",
@@ -121,7 +101,7 @@ const TableComponent: React.FC = () => {
         rowKey="trackId"
         pagination={false}
       />
-      <div style={{ marginTop: 22 }}>
+      <div className="bm-top">
         <ModalComponent />
       </div>
     </div>

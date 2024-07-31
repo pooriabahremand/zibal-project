@@ -10,9 +10,7 @@ export default function App(): React.ReactNode {
   };
   return (
     <ConfigProvider theme={customTheme} locale={faIR}>
-      <>
-        <TableComponent />;
-      </>
+      <TableComponent />;
     </ConfigProvider>
   );
 }
